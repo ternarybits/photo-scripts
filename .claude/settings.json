@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run ruff check:*)",
+      "Bash(uv run ruff format:*)",
+      "Bash(uv run pyright:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv sync)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run format:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git status)",
+      "Bash(git fetch)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
