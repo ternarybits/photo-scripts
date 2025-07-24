@@ -271,7 +271,7 @@ def move_duplicates(
                 try:
                     # Keep the original filename and directory structure
                     dest_path = duplicates_dir / dup_file.name
-                    
+
                     # If a file with the same name already exists, add a counter
                     counter = 1
                     while dest_path.exists():
@@ -279,7 +279,7 @@ def move_duplicates(
                         suffix = dup_file.suffix
                         dest_path = duplicates_dir / f"{stem}_{counter}{suffix}"
                         counter += 1
-                    
+
                     # Move the file
                     shutil.move(str(dup_file), str(dest_path))
                     success_count += 1
