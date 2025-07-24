@@ -201,12 +201,14 @@ def find_duplicates(
                     # Create duplicate groups
                     for full_hash, paths in full_hash_groups.items():
                         if len(paths) > 1:
+                            # Sort paths to ensure deterministic selection of keep_file
+                            sorted_paths = sorted(paths, key=str)
                             group = DuplicateGroup(
                                 hash_value=full_hash,
                                 size=size,
-                                files=paths,
-                                keep_file=paths[0],  # Keep the first file
-                                duplicate_files=paths[1:],  # Mark rest as duplicates
+                                files=sorted_paths,
+                                keep_file=sorted_paths[0],  # Keep the first file alphabetically
+                                duplicate_files=sorted_paths[1:],  # Mark rest as duplicates
                             )
                             duplicate_groups.append(group)
 
